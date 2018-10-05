@@ -12,19 +12,29 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	Button clickButton;
+	private Button clickButton;
+	private Button clickButton2;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 		primaryStage.setTitle("Hello World");
-		primaryStage.setScene(new Scene(root, 300, 275));
+		primaryStage.setScene(new Scene(root, 600, 800));
 		
 		clickButton = new Button("click me");
 		clickButton.setOnAction(new ButtonClickEvent());
+		
+		clickButton2 = new Button("click me 2");
+		clickButton2.setOnAction(r -> {
+			if (r.getSource() == clickButton2) {
+				System.out.println("你点击的是第二个 button");
+			}
+		});
+		
 		StackPane stackPane = new StackPane();
 		stackPane.getChildren().add(clickButton);
-		Scene scene = new Scene(stackPane, 100, 300);
+		stackPane.getChildren().add(clickButton2);
+		Scene scene = new Scene(stackPane, 400, 300);
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();
