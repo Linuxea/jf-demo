@@ -32,8 +32,7 @@ public class Main extends Application {
 		});
 		
 		StackPane stackPane = new StackPane();
-		stackPane.getChildren().add(clickButton);
-		stackPane.getChildren().add(clickButton2);
+		stackPane.getChildren().addAll(clickButton, clickButton2);
 		Scene scene = new Scene(stackPane, 400, 300);
 		
 		primaryStage.setScene(scene);
