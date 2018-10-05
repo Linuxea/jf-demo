@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,6 +28,7 @@ public class Main4 extends Application {
 		
 		VBox vBoxLayout = new VBox();
 		vBoxLayout.getChildren().addAll(label, clickButton);
+		vBoxLayout.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(vBoxLayout, 500, 300);
 		
 		
@@ -50,6 +52,7 @@ public class Main4 extends Application {
 			stage.setTitle(message);
 			Button button = new Button("这是一警告框");
 			VBox vBox = new VBox();
+			vBox.setAlignment(Pos.CENTER);
 			vBox.getChildren().add(button);
 			Scene scene = new Scene(vBox, 100, 100);
 			stage.setScene(scene);
